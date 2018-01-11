@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+           version="3.0">
+
+    <display-name>Video On Demand MVC</display-name>
+
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>upload.location</param-name>
+        <param-value>D:\Programmi\XAMPP\htdocs\videowebapp\images</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>read.location</param-name>
+        <param-value>http://localhost/videowebapp/images</param-value>
+    </context-param>
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/view/header.jspf</include-prelude>
+            <include-coda>/WEB-INF/view/footer.jspf</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/videowebapp</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+</web-app>
